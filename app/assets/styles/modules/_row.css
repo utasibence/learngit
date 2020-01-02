@@ -39,6 +39,10 @@
     margin-right: -65px;
   }
 
+  &--gutters-small {
+    margin-right: -45px;
+  }
+
   &--gutters-large {
     margin-right: -100px;
   }
@@ -47,7 +51,27 @@
     padding-right: 65px;
   }
 
+  &--gutters-small > div {
+    padding-right: 45px;
+  }
+
   &--gutters-large > div {
     padding-right: 100px;
+  }
+
+  &--t-pading {
+    padding-top: 80px;
+  }
+
+  /* BEGIN EQUAL HEIGHT RULES */
+  &--equal-height-at-medium {
+    @mixin atMedium {
+      display: flex;
+    }
+
+    & > div {
+      float: none;
+      display: flex;
+    }
   }
 }
