@@ -9,7 +9,8 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync').create(),
   svgSprite = require('gulp-svg-sprite'),
   rename = require('gulp-rename'),
-  del = require('del');
+  del = require('del'),
+  hexrgba = require('postcss-hexrgba');
 
 function cssInject() {
   return gulp.src('./app/temp/styles/styles.css')
@@ -18,7 +19,7 @@ function cssInject() {
 
 function css() {
   return gulp.src('./app/assets/styles/styles.css')
-    .pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
+    .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
     .pipe(gulp.dest('./app/temp/styles'));
 }
 
